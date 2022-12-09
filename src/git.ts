@@ -30,7 +30,7 @@ export async function gitCommit(operation: Operation): Promise<Operation> {
   // Append the file names last, as variadic arguments
   if (!all)
     args = args.concat(updatedFiles)
-
+  console.log(args)
   await ezSpawn.async('git', ['commit', ...args])
 
   return operation.update({ event: ProgressEvent.GitCommit, commitMessage })
