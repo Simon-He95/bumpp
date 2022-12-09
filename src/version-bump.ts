@@ -68,7 +68,7 @@ export async function versionBump(arg: VersionBumpOptions | string = {}): Promis
 
   // Update the version number in all files
   await updateFiles(operation)
-  console.log('---hi')
+  console.log('---hi', operation)
   if (operation.options.execute) {
     console.log(info, 'Executing script', operation.options.execute)
     await ezSpawn.async(operation.options.execute, { stdio: 'inherit' })
